@@ -12,6 +12,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
+// Define port for Heroku Setup
+const port = process.env.PORT || 3000;
+
 // Define arrays
 //let items = ["Buy Food", "Cook Food", "Eat Food"];
 //let workItems = [];
@@ -148,8 +151,6 @@ app.post("/delete", (req, res) => {
     );
   }
 });
-
-let port = process.env.PORT || 3000;
 
 // Server listen
 app.listen(port, () => {
